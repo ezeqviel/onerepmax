@@ -1,0 +1,11 @@
+# .gitignore
+
+# Vite build
+/dist
+
+# Cache de vite y archivos temp
+/node_modules/.vite
+/node_modules/.tmp/
+
+# Maps
+*.map
