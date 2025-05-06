@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.input-style { 
+  @apply p-3 border rounded shadow-sm
+}
+
+.btn-Calcular{
+  @apply p-3 bg-blue-600 text-white rounded shadow hover:bg-blue-700 disabled:bg-gray-400
+}
