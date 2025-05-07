@@ -1,5 +1,3 @@
-# .gitignore
-
 # Vite build
 /dist
 
@@ -10,3 +8,19 @@ node_modules
 
 # Maps
 *.map
+
+# Archivos de entorno local
+.env.local
+.env.development
+.env.test
+.env.*.local # Para patrones como .env.staging.local
+
+# Logs de npm/yarn 
+npm-debug.log
+yarn-error.log
+
+# Gajes de usar MacOS
+.DS_Store
+
+# Gajes de usar VSCode
+.vscode/
