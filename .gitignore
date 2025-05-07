@@ -6,6 +6,7 @@
 # Cache de vite y archivos temp
 /node_modules/.vite
 /node_modules/.tmp/
+node_modules
 
 # Maps
 *.map
