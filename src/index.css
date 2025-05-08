@@ -9,3 +9,7 @@
 .btn-Calcular{
   @apply p-3 bg-blue-600 text-white rounded shadow hover:bg-blue-700 disabled:bg-gray-400
 }
+
+.cellTable{
+  @apply border p-2 
+}

@@ -74,10 +74,10 @@ function App() {
           </p>
           <table className="table-auto border-collapse w-full max-w-md bg-white shadow rounded text-black">
             <thead>
-              <tr className="bg-gray-200">
-                <th className="border p-2">%</th>
-                <th className="border p-2">Peso (kg)</th>
-                <th className="border p-2">Reps aprox</th>
+              <tr className="bg-gray-300">
+                <th className="cellTable">%</th>
+                <th className="cellTable">Peso (kg)</th>
+                <th className="cellTable">Reps aprox</th>
               </tr>
             </thead>
             <tbody>
@@ -85,9 +85,9 @@ function App() {
               const pesoPct = (valoresCalculados.onerepmax * pct) / 100;
               return (
                   <tr key={pct} className="text-center">
-                    <td className="border p-2">{pct}%</td>
-                    <td className="border p-2">{formatoPeso(pesoPct)}</td>
-                    <td className="border p-2">{repeticiones[index]}</td> {/* Usamos el índice para emparejar los arrays */}
+                    <td className="cellTable">{pct}%</td>
+                    <td className="cellTable">{formatoPeso(pesoPct)}</td>
+                    <td className="cellTable">{repeticiones[index]}</td> {/* Usamos el índice para emparejar los arrays */}
                   </tr>
                 );
               })}
