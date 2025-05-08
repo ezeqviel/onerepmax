@@ -5,6 +5,8 @@
 /node_modules/.vite
 /node_modules/.tmp/
 node_modules
+.vite
+node_modules/.vite/deps/_metadata.json
 
 # Maps
 *.map
