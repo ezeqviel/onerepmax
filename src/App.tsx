@@ -18,8 +18,22 @@ function App() {
   const repsHechas = parseInt(reps);
 
   const handleCalcular = () => {
+    if(pesoUsado <= 0){
+      alert('El peso debe ser un número positivo.');
+      setPeso('')
+      setMostrarTabla(false);
+      return;
+    }
+
+    if(repsHechas <= 0){
+      alert('La cantidad de reps debe ser un número positivo.');
+      setReps('');      
+      setMostrarTabla(false);
+      return;
+    }
+
     if (pesoUsado && repsHechas) {
-      // Calculamos el 1RM solo al hacer clic
+      // Calculamos el 1RM solo al hacer clic      
       const onerepmax = repsHechas === 1 
         ? pesoUsado 
         : pesoUsado * (36 / (37 - repsHechas));
