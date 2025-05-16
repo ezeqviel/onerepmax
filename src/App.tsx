@@ -1,7 +1,6 @@
 import { useState } from 'react';
-import { formatoPeso } from './utils/onerepmax';
 import { calcularOneRepMax } from './utils/onerepmax';
-
+import TablaResultados from './componentes/TablaResultados';
 
 function App() {
   const [peso, setPeso] = useState('');
@@ -54,9 +53,6 @@ function App() {
     }
   };
 
-  const porcentajes =  [100, 95, 90, 85, 80, 75, 70, 65, 60, 55, 50];
-  const repeticiones = [1,   2,  4,  6,  8,  10, 12, 16, 20, 24, 30];
-
   return (
     <div className="min-h-screen bg-gray-100 p-6 flex flex-col items-center">
       <h1 className="text-3xl font-bold mb-6 text-black">Calculadora de 1RM</h1>
@@ -89,34 +85,9 @@ function App() {
         </button>
       </div>
 
-      {/* Tabla condicional - Usa valoresCalculados en lugar de los estados directos */}
+      
       {mostrarTabla && valoresCalculados && (
-        <>
-          <p className="text-xl mb-4 text-black">
-            Tu 1RM estimado: <strong>{valoresCalculados.onerepmax.toFixed(1)} kg</strong>
-          </p>
-          <table className="table-auto border-collapse w-full max-w-md bg-white shadow rounded text-black">
-            <thead>
-              <tr className="bg-gray-300">
-                <th className="cellTable">%</th>
-                <th className="cellTable">Peso (kg)</th>
-                <th className="cellTable">Reps aprox</th>
-              </tr>
-            </thead>
-            <tbody>
-              {porcentajes.map((pct, index) => {
-              const pesoPct = (valoresCalculados.onerepmax * pct) / 100;
-              return (
-                  <tr key={pct} className="text-center">
-                    <td className="cellTable">{pct}%</td>
-                    <td className="cellTable">{formatoPeso(pesoPct)}</td>
-                    <td className="cellTable">{repeticiones[index]}</td> {/* Usamos el índice para emparejar los arrays */}
-                  </tr>
-                );
-              })}
-            </tbody>
-          </table>
-        </>
+        <TablaResultados valoresCalculados={valoresCalculados} />
       )}
     </div>
   );
