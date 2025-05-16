@@ -26,14 +26,14 @@ function App() {
     setValoresCalculados(null);
     setMostrarTabla(false);
 
-    if(pesoUsado <= 0){
+    if(isNaN(pesoUsado) || pesoUsado <= 0){
       alert('El peso debe ser un número positivo.');
       setPeso('')
       setMostrarTabla(false);
       return;
     }
 
-    if(repsHechas <= 0){
+    if(isNaN(repsHechas) || repsHechas <= 0){
       alert('La cantidad de reps debe ser un número positivo.');
       setReps('');      
       setMostrarTabla(false);
