@@ -1,5 +1,6 @@
-import {useState} from 'react';
-import {formatoPeso} from './utils/onerepmax';
+import { useState } from 'react';
+import { formatoPeso } from './utils/onerepmax';
+import { calcularOneRepMax } from './utils/onerepmax';
 
 
 function App() {
@@ -42,9 +43,7 @@ function App() {
 
     if (pesoUsado && repsHechas) {
       // Calculamos el 1RM solo al hacer clic      
-      const onerepmax = repsHechas === 1 
-        ? pesoUsado 
-        : pesoUsado * (36 / (37 - repsHechas));
+      const onerepmax = calcularOneRepMax(pesoUsado, repsHechas);
       
       setValoresCalculados({
         peso: pesoUsado,
