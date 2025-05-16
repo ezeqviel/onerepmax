@@ -18,6 +18,14 @@ function App() {
   const repsHechas = parseInt(reps);
 
   const handleCalcular = () => {
+    // Verifico si el valor es NaN
+    const pesoUsado = isNaN(parseFloat(peso)) ? 0 : parseFloat(peso);
+    const repsHechas = isNaN(parseInt(reps)) ? 0 : parseInt(reps);
+
+    // Reinicio estos estados para evitar errores
+    setValoresCalculados(null);
+    setMostrarTabla(false);
+
     if(pesoUsado <= 0){
       alert('El peso debe ser un número positivo.');
       setPeso('')
@@ -60,9 +68,7 @@ function App() {
           placeholder="Peso levantado (kg)"
           value={peso}
           onChange={e => setPeso(e.target.value)}
-          onKeyDown={e => {
-            if (e.key === 'Enter') handleCalcular();
-          }}
+          onKeyDown={e => { if (e.key === 'Enter') handleCalcular(); }}
           className="input-style"
         />
 
@@ -71,9 +77,7 @@ function App() {
           placeholder="Repeticiones"
           value={reps}
           onChange={e => setReps(e.target.value)}
-          onKeyDown={e => {
-            if (e.key === 'Enter') handleCalcular();
-          }}
+          onKeyDown={e => { if (e.key === 'Enter') handleCalcular(); }}
           className="input-style"
         />
         
