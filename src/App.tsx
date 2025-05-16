@@ -60,6 +60,9 @@ function App() {
           placeholder="Peso levantado (kg)"
           value={peso}
           onChange={e => setPeso(e.target.value)}
+          onKeyDown={e => {
+            if (e.key === 'Enter') handleCalcular();
+          }}
           className="input-style"
         />
 
@@ -68,6 +71,9 @@ function App() {
           placeholder="Repeticiones"
           value={reps}
           onChange={e => setReps(e.target.value)}
+          onKeyDown={e => {
+            if (e.key === 'Enter') handleCalcular();
+          }}
           className="input-style"
         />
         
