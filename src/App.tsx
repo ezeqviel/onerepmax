@@ -64,6 +64,7 @@ function App() {
           value={peso}
           onChange={e => setPeso(e.target.value)}
           onKeyDown={e => { if (e.key === 'Enter') handleCalcular(); }}
+          min="1"
           className="input-style"
         />
 
@@ -73,6 +74,7 @@ function App() {
           value={reps}
           onChange={e => setReps(e.target.value)}
           onKeyDown={e => { if (e.key === 'Enter') handleCalcular(); }}
+          min="1"
           className="input-style"
         />
         
