@@ -1,28 +1,42 @@
-# Vite build
+# Build
 /dist
 
-# Cache de vite y archivos temp
-/node_modules/.vite
-/node_modules/.tmp/
+# Node modules
 /node_modules/
-.vite
-node_modules/.vite/deps/_metadata.json
 
-# Maps
-*.map
+# Vite
+/.vite/
+.vite/
 
-# Archivos de entorno local
+# Archivos de env
+.env*
+.env.*.local
 .env.local
 .env.development
 .env.test
-.env.*.local # Para patrones como .env.staging.local
+!.env.example
 
-# Logs de npm/yarn 
-npm-debug.log
-yarn-error.log
+# Archivos de mapa
+*.map
 
-# Gajes de usar MacOS
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS
 .DS_Store
+Thumbs.db
 
-# Gajes de usar VSCode
+# IDEs
 .vscode/
+.idea/
+
+# Cache
+.cache/
+*.tsbuildinfo
+
+# Archivos tmps
+*.log
+*.tmp
+*.swp
