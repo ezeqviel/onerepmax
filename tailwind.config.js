@@ -4,7 +4,9 @@ module.exports = {
     "./src/**/*.{js,ts,jsx,tsx}", // Asegúrate de incluir tus archivos React
   ],
   theme: {
-    extend: {},
+    extend: {
+		fontFamily: { sans: ['Inter', 'sans-serif'], },
+	},
   },
   plugins: [],
 }
