@@ -92,6 +92,11 @@ function App() {
 			{mostrarTabla && valoresCalculados && (
 				<TablaResultados valoresCalculados={valoresCalculados} />
 			)}
+
+			<footer className="mt-8 text-xs text-gray-400 italic text-center">
+				EZQL
+			</footer>
+
 		</div>
 	);
 }
