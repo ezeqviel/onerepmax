@@ -53,11 +53,12 @@ function App() {
     }
   };
 
-  return (
-    <div className="min-h-screen bg-gray-100 p-6 flex flex-col items-center">
-      <h1 className="text-3xl font-bold mb-6 text-black">Calculadora de 1RM</h1>
+return (
+  <div className="min-h-screen bg-gradient-to-br from-slate-100 via-white to-gray-200 p-6 flex flex-col items-center">
+    <div className="bg-white p-6 rounded-xl shadow-md w-full max-w-sm mb-6">
+      <h1 className="text-3xl font-bold mb-6 text-black text-center">Calculadora de 1RM</h1>
 
-      <div className="flex flex-col gap-4 w-full max-w-sm mb-4">
+      <div className="flex flex-col gap-4">
         <input
           type="number"
           placeholder="Peso levantado (kg)"
@@ -86,13 +87,14 @@ function App() {
           Calcular
         </button>
       </div>
-
-      
-      {mostrarTabla && valoresCalculados && (
-        <TablaResultados valoresCalculados={valoresCalculados} />
-      )}
     </div>
-  );
+
+    {mostrarTabla && valoresCalculados && (
+      <TablaResultados valoresCalculados={valoresCalculados} />
+    )}
+  </div>
+);
+
 }
 
 export default App;
