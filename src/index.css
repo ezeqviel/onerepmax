@@ -16,5 +16,5 @@ body { font-family: 'Inter', sans-serif; }
 }
 
 .cellTable{
-  @apply border p-2 
+  @apply border p-2
 }

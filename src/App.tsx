@@ -54,7 +54,7 @@ function App() {
 	};
 
 	return (
-		<div className="min-h-screen bg-gradient-to-br from-slate-100 via-white to-gray-200 p-6 flex flex-col items-center">
+		<div className="min-h-screen bg-gradient-to-br from-amber-50 via-white to-sky-200 p-6 flex flex-col items-center">
 			<div className="bg-white p-6 rounded-xl shadow-md w-full max-w-sm mb-6">
 				<h1 className="text-3xl font-bold mb-6 text-black text-center">Calculadora de 1RM</h1>
 

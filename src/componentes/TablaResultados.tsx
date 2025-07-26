@@ -20,27 +20,30 @@ function TablaResultados({ valoresCalculados }: Props) {
 				Tu 1RM estimado: <strong>{valoresCalculados.onerepmax.toFixed(1)} kg</strong>
 			</p>
 
-			<table className="table-auto border-collapse w-full max-w-md bg-white shadow rounded text-black">
+			{/* <table className="table-auto border-collapse w-full max-w-md bg-white shadow rounded text-black"> */}
+			<table className="table-auto border-collapse w-full max-w-md bg-white shadow rounded-lg overflow-hidden text-black">
 				<thead>
-					<tr className="bg-gray-300">
-						<th className="cellTable">%</th>
+					<tr className="bg-blue-200">
+						<th className="cellTable rounded-tl-lg">%</th>
 						<th className="cellTable">Peso (kg)</th>
-						<th className="cellTable">Reps aprox</th>
+						<th className="cellTable rounded-tr-lg">Reps aprox</th>
 					</tr>
 				</thead>
 
 				<tbody>
 					{porcentajes.map((pct, index) => {
 						const pesoPct = (valoresCalculados.onerepmax * pct) / 100;
+						const isLast = index === porcentajes.length - 1;
 						return (
 							<tr key={pct} className="text-center">
-								<td className="cellTable">{pct}%</td>
+								<td className={`cellTable ${isLast ? 'rounded-bl-lg' : ''}`}>{pct}%</td>
 								<td className="cellTable">{formatoPeso(pesoPct)}</td>
-								<td className="cellTable">{repeticiones[index]}</td>
+								<td className={`cellTable ${isLast ? 'rounded-br-lg' : ''}`}>{repeticiones[index]}</td>
 							</tr>
 						);
 					})}
 				</tbody>
+
 			</table>
 		</>
 	);
